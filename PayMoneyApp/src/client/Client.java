@@ -42,9 +42,20 @@ public class Client {
 		TransactionService transactionService = new TransactionService();
 		//ask for the number of transactions using system.in
 		//create an array of length
-		//populate the array with the values using scanner class		
-		int[] inputTransactions = new int[] {100, 200, 400, 500, 600,800,900,1000,2000,3000,40000};
-		int target = 15000;
+		//populate the array with the values using scanner class	
+		Scanner s = new Scanner(System.in); 
+		System.out.println("Enter the size of transaction array");
+		int size = s.nextInt();
+		int inputTransactions[] = new int[size];
+		System.out.println("Enter the values of array"); 
+		for (int i = 0; i < size; i++) {
+			inputTransactions[i] = s.nextInt();
+		}
+		//int[] inputTransactions = new int[] {100, 200, 400, 500, 600,800,900,1000,2000,3000,40000};
+		//int target = 15000;
+		System.out.println("Enter the value of target");
+		Scanner sc =new Scanner(System.in);
+		int target = sc.nextInt();
 		transactionService.checkTransactionTarget(inputTransactions, target);
 	}
 }
